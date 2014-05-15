@@ -1,0 +1,48 @@
+<h1><%= @restaurant.name %></h1>
+
+<div class='container'>
+    <div>
+        <div>
+          <%= image_tag(@restaurant.photo_url)%>
+        </div>
+        <ul>
+          <li><%= @restaurant.name %></li>
+          <li><%= @restaurant.adress %></li>
+          <li><%= @restaurant.zipcode %></li>
+          <li><%= @restaurant.city %></li>
+        </ul>
+    </div>
+    <% if @restaurant.comments.count > 0 %>
+      <div>
+        <%= @restaurant.comments.all.each do |post| %>
+          <ul>
+            <li>
+              <h2> <%= comments.title %> </h2>
+              <div> <%= comments.body %></div>
+            </li>
+          </ul>
+        <% end %>
+      </div>
+    <% end %>
+    <div>
+        <%= form_for @restaurant.comments.build do |form|%>
+        <%= form.hidden_field :restaurant_id %>
+          <div class="form-group col-sm-10">
+              <%= form.label :title %>
+              <%= form.text_field :title, class: "form-control" %>
+          </div>
+          <div class="form-group col-sm-10">
+             <%= form.label :body %>
+             <%= form.text_field :body, class: "form-control"%>
+          </div>
+          <div class="form-group col-sm-10">
+              <%= form.submit class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class='form-group'>
+    <%= button_to "New review", comments_path, :method => :get, class: "form-group  btn btn-primary" %>
+  </div>
+
+  </div>

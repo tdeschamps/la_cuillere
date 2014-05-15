@@ -1,0 +1,18 @@
+<h1>Les restos du Ghetto</h1>
+
+<div class='container'>
+  <%= @restaurants.each do |restaurant| %>
+    <div>
+        <div>
+          <%= link_to image_tag(restaurant.photo_url), restaurant_path(restaurant) %>
+        </div >
+        <ul>
+          <li><%= restaurant.name %></li>
+          <li><%  restaurant.type %></li>
+          <li><%= restaurant.adress %></li>
+          <li><%= restaurant.zipcode %></li>
+          <li><%= restaurant.city %></li>
+        </ul>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,26 @@
+ <div class="form-container">
+  <%= form_for @restaurant do |form|%>
+    <div class="form-group col-sm-10">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: "form-control" %>
+    </div>
+    <div class="form-group col-sm-10">
+        <%= form.label :photo_url %>
+        <%= form.text_field :photo_url, class: "form-control"%>
+    </div>
+    <div class="form-group col-sm-10">
+        <%= form.label :adress %>
+        <%= form.text_field :adress, class: "form-control"%>
+    </div>
+    <div class="form-group col-sm-10">
+        <%= form.label :zipcode %>
+        <%= form.text_field :zipcode, class: "form-control"%>
+    </div>
+    <div class="form-group col-sm-10">
+       <%= form.label :city %>
+       <%= form.text_field :city, class: "form-control"%>
+    </div>
+    <div class="form-group col-sm-10">
+        <%= form.submit class: "btn btn-primary" %>
+    </div>
+  <% end %>
