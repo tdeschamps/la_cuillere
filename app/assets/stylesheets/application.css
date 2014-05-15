@@ -14,3 +14,18 @@
  *= require_tree .
  *= require_self
  */
+ .small {
+  height: 200px;
+  width: auto;
+ }
+ .medium {
+  height: 500px;
+ }
+.vertical-space {
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+.white-hollow {
+  background: white;
+  opacity: 0.5
+}

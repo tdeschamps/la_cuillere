@@ -1,17 +1,21 @@
 <h1>Les restos du Ghetto</h1>
 
 <div class='container'>
-  <%= @restaurants.each do |restaurant| %>
-    <div>
-        <div>
-          <%= link_to image_tag(restaurant.photo_url), restaurant_path(restaurant) %>
-        </div >
-        <ul>
-          <li><%= restaurant.name %></li>
-          <li><%= restaurant.adress %></li>
-          <li><%= restaurant.zipcode %></li>
-          <li><%= restaurant.city %></li>
-        </ul>
-    </div>
-  <% end %>
+  <% @restaurants.each do |restaurant| %>
+    <%= link_to(restaurant_path(restaurant)) do %>
+      <div class = "row vertical-space col-md-6">
+          <div class = "col-md-8">
+            <%= image_tag(restaurant.photo_url, class: "img-rounded small") %>
+          </div >
+          <div class="col-md-4">
+            <ul class="list-unstyled">
+              <li><h2><%= restaurant.name %></h2></li>
+              <li><%= restaurant.adress %></li>
+              <li><%= restaurant.zipcode %></li>
+              <li><%= restaurant.city %></li>
+            </ul>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
 </div>
